@@ -4,7 +4,7 @@ A Python 3.10 implementation of Shamir's Secret Sharing (S3) scheme.
 # How the S3 scheme works
 The scheme works based off of Galois fields of prime order, we will denote by $\mathrm{GF}(p)$ the Galois field of prime order $p$. We omit the square brackets denoting equivalence classes modulo $p$ to aid with readability.
 
-The basic idea behind the scheme is that any polynomial of degree $n$ is uniquely defined by $(n+1)$ points. If we wish to encode some message $m$ we can simply pick some $n$-th polynomial that somehow encodes $m$ and then share $(n+1)$ distinct points on this curve, say to $(n+1)$ trustworthy friends. To retrieve our secret, a recipient must then find the curve passing through our points _et voilà_!
+The basic idea behind the scheme is that any polynomial of degree $n$ is uniquely defined by $(n+1)$ points. If we wish to encode some message $m \in \mathrm{GF}(p)$ we can simply pick some $n$-th degree polynomial that somehow encodes $m$ and then share $(n+1)$ distinct points on this curve, say to $(n+1)$ trustworthy friends. To retrieve our secret, a recipient must then find the curve passing through our points _et voilà_!
 
 
 ## Encoding $m$ in a polynomial

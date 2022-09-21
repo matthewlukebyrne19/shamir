@@ -24,7 +24,7 @@ We now pick $(n+1)$ values $x_1, \cdots, x_{n+1} \in \mathrm{GF}(p)$, producing 
 To reconstruct the curve from these points we use a version of [Lagrange interpolation](https://en.wikipedia.org/wiki/Lagrange_polynomial) adjusted for Galois fields.
 
 For each point $P_i$ we define a polynomial $\delta_i$ using the Lagrange interpolation formula:
-$$\delta_i(x) := \prod_{0 \lt j \leq n+1 \atop j\neq i} (x-x_j)(x_i-x_j)^{-1},$$
+$$\delta_i(x) := \prod_{1 \leq j \leq n+1 \atop j\neq i} (x-x_j)(x_i-x_j)^{-1},$$
 where $x^{-1}$ represents the multiplicative inverse of $x$ in $\mathrm{GF}(p)$. We then define the reconstructed polynomial $\hat{f}(x)$ by the following formula:
 $$\hat{f}(x) = \sum_{i=1}^{n+1}f(x_i)\delta_i(x).$$
 
